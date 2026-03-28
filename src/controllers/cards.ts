@@ -22,7 +22,7 @@ export const createCard = (req: Request, res: Response) => {
 };
 
 export const deleteCard = (req: Request, res: Response) => {
-  Card.findByIdAndRemove(req.params.cardId)
+  Card.findByIdAndDelete(req.params.cardId)
     .then((card) => {
       if (!card) {
         return res.status(ERROR_CODE_NOT_FOUND).send({ message: 'Карточка не найдена' });
